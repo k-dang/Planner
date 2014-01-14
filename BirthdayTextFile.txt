@@ -1,0 +1,7 @@
+Kevin,			Me,		04,	12,
+Winner,			Friend,		01,	01,
+Simon,			Friend,		10,	06,
+Yoko,			Sister,		06,	09,
+Yin,			Girlfriend,	05,	06,
+Jenny,			Mother,		16,	11,
+Yuuji,			Boss,		03,	03,
