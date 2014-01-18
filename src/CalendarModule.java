@@ -278,9 +278,9 @@ public class CalendarModule extends JFrame implements ActionListener, ItemListen
 	public void actionPerformed(ActionEvent a){
 		Calendar c1 = new Calendar(2011);
 		try{
-			//c1.readinBirthday();
+			c1.readinBirthday();
 			c1.readinHoliday();
-			//c1.readinOther();
+			c1.readinOther();
 			if(a.getSource() == showholiday2){
 				showholiday3.setText("");
 				
@@ -403,7 +403,7 @@ public class CalendarModule extends JFrame implements ActionListener, ItemListen
 		test.addComponentToPane(frame.getContentPane());
 
 		frame.pack();
-		frame.setSize (600, 500);
+		frame.setSize (700, 500);
 		frame.setVisible(true);
 	}
 }
