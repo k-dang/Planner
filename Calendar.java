@@ -1,7 +1,7 @@
 import java.io.*;
 public class Calendar implements CalendarHelper{
   public int Year;
-  public Holiday[] holiday;
+  static public Holiday[] holiday;
   public Birthday[] birthday;
   public Other[] other;
   
@@ -273,17 +273,15 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String hol[];
     String delimeter = ",";
-    InputStreamReader input = new InputStreamReader (System.in);
-    BufferedReader in = new BufferedReader (new FileReader ("HolidayTextFile.txt"));
+    BufferedReader in = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\workspace\\Java Calendar\\src\\HolidayTextFile.txt"));
     int b = 0;
     int i = 0;
-     while ((str = in.readLine ()) != null){
+     while (in.readLine () != null){
         b++;
      }
      holiday = new Holiday[b];
      in.close();
-     BufferedReader in1 = new BufferedReader (new FileReader ("HolidayTextFile.txt"));
-     
+     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\workspace\\Java Calendar\\src\\HolidayTextFile.txt"));
      while((str = in1.readLine()) != null){
        hol = str.split(delimeter);
        String noh = hol[0].trim();
@@ -306,8 +304,7 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String bir[];
     String delimeter = ",";
-    InputStreamReader input = new InputStreamReader (System.in);
-    BufferedReader in = new BufferedReader (new FileReader ("BirthdayTextFile.txt"));
+    BufferedReader in = new BufferedReader (new FileReader (("C:\\Users\\Kevin\\workspace\\Java Calendar\\src\\BirthdayTextFile.txt")));
     int b = 0;
     int i = 0;
      while ((str = in.readLine ()) != null){
@@ -326,6 +323,7 @@ public class Calendar implements CalendarHelper{
        birthday[i] = new Birthday(name,rel,daa,moo);
        i++;
      }
+     in1.close();
      return birthday;
      }
 /**
@@ -337,7 +335,6 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String oth[];
     String delimeter = ",";
-    InputStreamReader input = new InputStreamReader (System.in);
     BufferedReader in = new BufferedReader (new FileReader ("OtherTextFile.txt"));
     int b = 0;
     int i = 0;
@@ -347,7 +344,6 @@ public class Calendar implements CalendarHelper{
      other = new Other[b];
      in.close();
      BufferedReader in1 = new BufferedReader (new FileReader ("OtherTextFile.txt"));
-     
      while((str = in1.readLine()) != null){
        oth = str.split(delimeter);
        String aoe = oth[0].trim();
@@ -356,7 +352,9 @@ public class Calendar implements CalendarHelper{
        int moo = Integer.parseInt(oth[3].trim());
        other[i] = new Other(aoe,noe,daa,moo);
        i++;
+       System.out.println(other[i]);
      }
+     in1.close();
      return other;
      }
 /**
@@ -379,12 +377,13 @@ public class Calendar implements CalendarHelper{
  * @return none
  */  
   public void writeoutBirthday()throws IOException{
-          FileWriter fstream = new FileWriter ("BirthdayTextFile.txt");
+      FileWriter fstream = new FileWriter ("BirthdayTextFile.txt");
       BufferedWriter out = new BufferedWriter (fstream);
       for(int i = 0;i<birthday.length;i++){
               out.write(birthday[i].getNameofPerson() + ",\t" + birthday[i].getRelationship() + ",\t" + birthday[i].getDay() + ",\t" + birthday[i].getMonth()+",");
       }
   out.newLine();
+  out.close();
   }
 /**
  * Method that writes all of the array objects from Other to a file seperating each info with a comma
@@ -398,7 +397,9 @@ public class Calendar implements CalendarHelper{
                 out.write(other[i].getActionsOnEvent() + ",\t" + other[i].getEventName() + ",\t" + other[i].getDay() + ",\t" + other[i].getMonth()+",");
               }
         out.newLine();
+        out.close();
   }
 }
+
 
 
