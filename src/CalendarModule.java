@@ -276,14 +276,13 @@ public class CalendarModule extends JFrame implements ActionListener, ItemListen
 
 
 	public void actionPerformed(ActionEvent a){
-		Calendar c1 = new Calendar(2011);
+		Calendar c1 = new Calendar(2014);
 		try{
 			c1.readinBirthday();
 			c1.readinHoliday();
 			c1.readinOther();
 			if(a.getSource() == showholiday2){
 				showholiday3.setText("");
-				
 				for(int i= 0;i<c1.holiday.length;i++){
 					showholiday3.append(c1.sortHoliday(c1.readinHoliday())[i].printInfo());
 					if(i == c1.holiday.length-1){

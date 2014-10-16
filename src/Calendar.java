@@ -273,7 +273,7 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String hol[];
     String delimeter = ",";
-    BufferedReader in = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Desktop\\Planner\\HolidayTextFile.txt"));
+    BufferedReader in = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Documents\\Planner\\HolidayTextFile.txt"));
     int b = 0;
     int i = 0;
      while (in.readLine () != null){
@@ -281,7 +281,7 @@ public class Calendar implements CalendarHelper{
      }
      holiday = new Holiday[b];
      in.close();
-     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Desktop\\Planner\\HolidayTextFile.txt"));
+     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Documents\\Planner\\HolidayTextFile.txt"));
      while((str = in1.readLine()) != null){
        hol = str.split(delimeter);
        String noh = hol[0].trim();
@@ -304,7 +304,7 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String bir[];
     String delimeter = ",";
-    BufferedReader in = new BufferedReader (new FileReader (("C:\\Users\\Kevin\\Desktop\\Planner\\BirthdayTextFile.txt")));
+    BufferedReader in = new BufferedReader (new FileReader (("C:\\Users\\Kevin\\Documents\\Planner\\BirthdayTextFile.txt")));
     int b = 0;
     int i = 0;
      while (in.readLine () != null){
@@ -312,7 +312,7 @@ public class Calendar implements CalendarHelper{
      }
      birthday = new Birthday[b];
      in.close();
-     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Desktop\\Planner\\BirthdayTextFile.txt"));
+     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Documents\\Planner\\BirthdayTextFile.txt"));
      
      while((str = in1.readLine()) != null){
        bir = str.split(delimeter);
@@ -335,7 +335,7 @@ public class Calendar implements CalendarHelper{
     String str = "";
     String oth[];
     String delimeter = ",";
-    BufferedReader in = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Desktop\\Planner\\OtherTextFile.txt"));
+    BufferedReader in = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Documents\\Planner\\OtherTextFile.txt"));
     int b = 0;
     int i = 0;
      while (in.readLine () != null){
@@ -343,7 +343,7 @@ public class Calendar implements CalendarHelper{
      }
      other = new Other[b];
      in.close();
-     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Desktop\\Planner\\OtherTextFile.txt"));
+     BufferedReader in1 = new BufferedReader (new FileReader ("C:\\Users\\Kevin\\Documents\\Planner\\OtherTextFile.txt"));
      while((str = in1.readLine()) != null){
        oth = str.split(delimeter);
        String aoe = oth[0].trim();
